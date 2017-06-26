@@ -5,18 +5,22 @@
     <title></title>
   </head>
   <body>
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<p>ok</p>
 
-<p id="captchaImage"></p>
+<p id="dialog-message"></p>
 <script>
+
+
    $.get( "https://arcane-depths-35133.herokuapp.com", function( data ) {
-    var image = document.getElementById('captchaImage');
+    var image = document.getElementById('dialog-message');
     image.innerHTML = '<input type="image" src="' + data.img + '" onclick="answer(event)"></img>';
     return dataId = data.id;
   });
+
+
   function answer(event){
     event.preventDefault();
     var params = 'id=' + dataId + '&x=' + event.clientX + '&y=' + event.clientY
@@ -24,6 +28,23 @@
       alert(response);
     })
   }
+
+  var captchup = function(){
+  $( function() {
+  $("#dialog-message").dialog({
+    modal: true,
+    width: 'auto',
+    closeOnEscape: false,
+    resizable: false,
+    maxHeight: 800,
+    position: {my: "center", at: "top", of: window }
+  });
+});
+}
+
+captchup()
+
+
 </script>
 </body>
 </html>
