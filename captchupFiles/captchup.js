@@ -32,3 +32,5 @@ var captchup = function() {
 };
 
 captchup();
+
+$('#response').text(apiResponse)
