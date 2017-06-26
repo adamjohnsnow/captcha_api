@@ -22,7 +22,7 @@ app.get('/', function(req, res){
 })
 
 
-app.post('/answer', function(req, res){
+app.post('/answer', cors(), function(req, res, next){
   captcha = new Minigames()
   res.send(captcha.getSolution(req.query))
 })
