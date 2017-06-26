@@ -19,15 +19,16 @@ var ClickArea = function(stubNumber){
 }
 
 ClickArea.prototype.getSolution = function(answer){
+  console.log(answer)
   function findSolution(hash) {
-    return hash.id === answer[0];
+    return hash.id === Number(answer.id);
   }
   var solution = solutions.find(findSolution);
   return (
-    Number(answer[1].x) > solution.xLowLimit &&
-    Number(answer[1].x) < solution.xHighLimit &&
-    Number(answer[1].y) > solution.yLowLimit &&
-    Number(answer[1].y) < solution.yHighLimit
+    Number(answer.x) > solution.xLowLimit &&
+    Number(answer.x) < solution.xHighLimit &&
+    Number(answer.y) > solution.yLowLimit &&
+    Number(answer.y) < solution.yHighLimit
   );
 }
 

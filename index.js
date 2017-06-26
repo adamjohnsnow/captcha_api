@@ -23,7 +23,8 @@ app.get('/', function(req, res){
 
 
 app.post('/answer', function(req, res){
-
+  captcha = new Minigames()
+  res.send(captcha.getSolution(req.query))
 })
 
 app.get('/test', function(req, res){
