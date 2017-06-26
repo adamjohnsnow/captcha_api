@@ -5,9 +5,6 @@ var app = express();
 // var getAnswer = require('./assets/antworten')
 var Minigames = require('./assets/areaClick')
 
-var port
-
-
 app.set('port', (process.env.PORT || 7070))
 
 app.listen(app.get('port'), function(){
