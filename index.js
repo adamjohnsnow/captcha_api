@@ -24,7 +24,6 @@ app.get('/', function(req, res){
 
 app.post('/answer', function(req, res){
   captcha = new ImgAssoc()
-  console.log(req.query)
   res.send(captcha.checkAnswer(req.query))
 })
 
