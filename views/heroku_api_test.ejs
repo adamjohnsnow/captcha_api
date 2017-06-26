@@ -12,38 +12,48 @@
 
 <p id="dialog-message"></p>
 <script>
-
-
-   $.get( "https://arcane-depths-35133.herokuapp.com", function( data ) {
-    var image = document.getElementById('dialog-message');
-    image.innerHTML = '<input type="image" src="' + data.img + '" onclick="answer(event)"></img>';
-    return dataId = data.id;
+  $.get("https://arcane-depths-35133.herokuapp.com", function(data) {
+    var image = document.getElementById("dialog-message");
+    image.innerHTML =
+      '<input type="image" id="captchaImage" src="' +
+      data.img +
+      '" onclick="answer(event)" width="400px"></img>';
+    return (dataId = data.id);
   });
 
-
-  function answer(event){
+  function answer(event) {
     event.preventDefault();
-    var params = 'id=' + dataId + '&x=' + event.clientX + '&y=' + event.clientY
-    $.post("https://arcane-depths-35133.herokuapp.com/answer?" + params, function(response) {
+    var image = document.getElementById("dialog-message");
+    var params =
+      "id=" +
+      dataId +
+      "&x=" +
+      (event.clientX - image.offsetLeft) +
+      "&y=" +
+      (event.clientY - image.offsetTop);
+    console.log(params);
+    $.post("https://arcane-depths-35133.herokuapp.com/answer?" + params, function(
+      response
+    ) {
       alert(response);
-    })
+    });
   }
 
-  var captchup = function(){
-  $( function() {
-  $("#dialog-message").dialog({
-    modal: true,
-    width: 'auto',
-    closeOnEscape: false,
-    resizable: false,
-    maxHeight: 800,
-    position: {my: "center", at: "top", of: window }
-  });
-});
-}
+  var captchup = function() {
+    $(function() {
+      $("#dialog-message").dialog({
+        modal: false,
+        width: "auto",
+        closeOnEscape: false,
+        resizable: false,
+        Height: 700,
+        Width: 700,
+        position: { my: "center", at: "top", of: window }
+      });
+    });
+  };
 
-captchup()
-
+  captchup();
 
 </script>
 </body>

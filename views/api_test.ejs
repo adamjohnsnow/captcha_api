@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+
+<div id="dialog-message"></div>
+
+<script>
+$.get("http://localhost:7070", function( data ) {
+  var string =
+  '<img src="' +  data.mainString  + '"></img>'+
+  '<img src="' +  data.promptStrings[0]  + '"></img>'+
+  '<img src="' +  data.promptStrings[1]  + '"></img>'+
+  '<img src="' +  data.promptStrings[2]  + '"></img>';
+  document.getElementById('dialog-message').innerHTML = string;
+});
+
+
+var captchup = function() {
+  $(function() {
+    $("#dialog-message").dialog({
+      modal: false,
+      width: "auto",
+      closeOnEscape: false,
+      resizable: false,
+      Height: 700,
+      Width: 700,
+      position: { my: "center", at: "top", of: window }
+    });
+  });
+};
+
+captchup();
+
+</script>
+</body>
+</html>
