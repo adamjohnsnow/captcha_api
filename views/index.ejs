@@ -1,12 +1,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</script>
 
 <p>ok</p>
 
 <p> <%=word%> </p>
 
+<p id="captchaImage"></p>
+
 <script>
   $.get( "https://arcane-depths-35133.herokuapp.com/", function( data ) {
-    alert( data );
+    var image = document.getElementById('captchaImage');
+    image.innerHTML = '<img src="' + data.img + '"></img>';
   });
+
 </script>
