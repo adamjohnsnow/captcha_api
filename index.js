@@ -28,7 +28,5 @@ app.post('/answer', cors(), function(req, res, next){
 })
 
 app.get('/test', function(req, res){
-  res.render('index', {
-    word: 'Hello World'
-  })
+  res.render('heroku_api_test', {})
 })
