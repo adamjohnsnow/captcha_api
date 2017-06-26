@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<p>ok</p>
+
+<p id="captchaImage"></p>
+<script>
+   $.get( "http://localhost:7070", function( data ) {
+    var image = document.getElementById('captchaImage');
+    image.innerHTML = '<input type="image" src="' + data.img + '" onclick="answer(event)"></img>';
+    return dataId = data.id;
+  });
+  function answer(event){
+    event.preventDefault();
+    var params = 'id=' + dataId + '&x=' + event.clientX + '&y=' + event.clientY
+    $.post("http://localhost:7070/answer?" + params, function(response) {
+      alert(response);
+    })
+  }
+</script>
+</body>
+</html>
