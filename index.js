@@ -17,12 +17,11 @@ app.listen(app.get('port'), function(){
   console.log('port is ' + app.get('port'))
 })
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
+// app.use(function(req, res, next) {
+  // res.header("Access-Control-Allow-Origin", "*");
+  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  // next();
+// });
 
 app.get('/', function(req, res){
   var capcha = new Minigames();
@@ -30,8 +29,8 @@ app.get('/', function(req, res){
 })
 
 app.post('/answer', function(req, res){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  // res.header("Access-Control-Allow-Origin", "*");
+  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   captcha = new Minigames()
   res.send(captcha.getSolution(req.query))
 })
