@@ -12,7 +12,8 @@ $.get("https://arcane-depths-35133.herokuapp.com", function( data ) {
 function selectImage(event){
   var answer = 'id=' + gameKey + '&img=' + event.target.currentSrc
   $.post("https://arcane-depths-35133.herokuapp.com/answer?" + answer, function(response){
-    alert(response)
+    var apiResponse = response
+    return apiResponse
   })
 }
 
