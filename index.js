@@ -17,6 +17,12 @@ app.listen(app.get('port'), function(){
   console.log('port is ' + app.get('port'))
 })
 
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
+ 
 app.get('/', function(req, res){
   var capcha = new Minigames();
   res.send(capcha.gameData);
