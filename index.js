@@ -11,6 +11,7 @@ app.set('port', (process.env.PORT || 7070))
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views'));
 app.use(cors());
+app.options('*', cors());
 
 app.listen(app.get('port'), function(){
   console.log('port is ' + app.get('port'))
@@ -20,7 +21,6 @@ app.get('/', function(req, res){
   var capcha = new Minigames();
   res.send(capcha.gameData);
 })
-
 
 app.post('/answer', cors(), function(req, res, next){
   captcha = new Minigames()
