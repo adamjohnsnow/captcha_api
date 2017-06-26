@@ -21,7 +21,7 @@
     event.preventDefault();
     var params = 'id=' + dataId + '&x=' + event.clientX + '&y=' + event.clientY
     var newparams = { name: 'peter'}
-    $.post("https://arcane-depths-35113.herokuapp.com/answer" + newparams, function(response) {
+    $.post("https://arcane-depths-35113.herokuapp.com/answer", newparams, function(response) {
       alert(response);
     })
   }
