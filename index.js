@@ -10,6 +10,7 @@ app.set('port', (process.env.PORT || 7070))
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views'));
+app.use('/captchupFiles', express.static('captchupFiles'));
 app.use(cors());
 app.options('*', cors());
 
