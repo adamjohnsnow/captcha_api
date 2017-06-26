@@ -23,8 +23,9 @@ app.get('/', function(req, res){
 })
 
 app.post('/answer', function(req, res){
-  captcha = new Minigames()
-  res.send(captcha.getSolution(req.query))
+  captcha = new ImgAssoc()
+  console.log(req.query)
+  res.send(captcha.checkAnswer(req.query))
 })
 
 app.get('/test', function(req, res){

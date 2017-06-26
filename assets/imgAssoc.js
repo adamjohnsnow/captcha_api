@@ -75,12 +75,12 @@ ImgAssoc.prototype.getSolution = function(mainImageid){
   return solutions.find(findSolution);
 };
 
-ImgAssoc.prototype.checkAnswer = function(gameKey, name){
+ImgAssoc.prototype.checkAnswer = function(answer){
   function findImage(hash) {
-    return gameKey === hash.id;
+    return Number(answer.id) === hash.id;
   };
   var returnedImage = solutions.find(findImage);
-  return returnedImage.img === name
+  return returnedImage.img === answer.img;
 }
 
 module.exports = ImgAssoc;
