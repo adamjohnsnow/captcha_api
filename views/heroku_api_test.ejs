@@ -12,7 +12,7 @@
 
 <p id="dialog-message"></p>
 <script>
-  $.get("https://arcane-depths-35133.herokuapp.com", function(data) {
+  $.get("https://arcane-depths-35133.herokuapp.com/", function(data) {
     var image = document.getElementById("dialog-message");
     image.innerHTML =
       '<input type="image" id="captchaImage" src="' +
@@ -23,20 +23,22 @@
 
   function answer(event) {
     event.preventDefault();
-    var image = document.getElementById("dialog-message");
+    var modal = document.querySelector("div[role='dialog']");
+    var modalDiv = document.getElementById("dialog-message")
+    var image = document.getElementById("captchaImage");
     var params =
       "id=" +
       dataId +
       "&x=" +
-      (event.clientX - image.offsetLeft) +
+      (event.clientX - modal.offsetLeft - modalDiv.offsetLeft - image.offsetLeft) +
       "&y=" +
-      (event.clientY - image.offsetTop);
+      (event.clientY - modal.offsetTop - modalDiv.offsetTop - image.offsetTop);
     console.log(params);
-    $.post("https://arcane-depths-35133.herokuapp.com/answer?" + params, function(
-      response
-    ) {
-      alert(response);
-    });
+    // $.post("https://arcane-depths-35133.herokuapp.com/answer?" + params, function(
+    //   response
+    // ) {
+    //   alert(response);
+    // });
   }
 
   var captchup = function() {

@@ -25,7 +25,11 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "pg": "^6.4.0",
-    "pg-pool": "^1.8.0",
-    "sequelize": "^4.2.0"
+
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0",
+    "jasmine-spec-reporter": "^4.1.1"
+
   }
 }

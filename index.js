@@ -2,10 +2,13 @@ var express = require('express');
 var bodyparser = require('body-parser')
 var app = express();
 var cors = require('cors')
+
 var getGameData = require('./assets/getGameData.js')
 var getGameAnswer = require('./assets/getGameAnswer.js')
-// var session = require('express-session');
-// var getAnswer = require('./assets/antworten')
+
+var ImgAssoc = require('./assets/imgAssoc')
+var AreaClick = require('./assets/areaClick')
+
 
 app.set('port', (process.env.PORT || 7070))
 
@@ -50,3 +53,18 @@ app.post('/db', function(req, res){
     res.send(authenticate)
   });
 });
+
+app.get('/area-click-test', function(req, res){
+  res.render('heroku_api_test', {})
+})
+
+app.get('/area-click', function(req, res){
+  var capcha = new AreaClick();
+  res.send(capcha.gameData);
+})
+
+app.post('/area-click-answer', function(req, res){
+  captcha = new AreaClick()
+  res.send(captcha.getSolution(req.query))
+})
+
