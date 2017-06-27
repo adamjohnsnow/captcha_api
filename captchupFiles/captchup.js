@@ -27,7 +27,8 @@ var captchup = function() {
       draggable: true,
       resizable: false,
       Height: 700,
-      Width: 700
+      Width: 700,
+      position: { my: "left top", at: "left bottom", of: button }
     })
   })
 };
