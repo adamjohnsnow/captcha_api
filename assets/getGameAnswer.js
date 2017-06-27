@@ -15,7 +15,7 @@ var getGameData = function(gameResponse, callback){
     };
 
     var answerQueryString = "SELECT * FROM games WHERE id = '"+gameResponse.id+"';";
-    const answerQuery = client.query(gameQueryString);
+    const answerQuery = client.query(answerQueryString);
     answerQuery.on('row', (row) => {
       gameAnswer = row
     });
@@ -32,11 +32,11 @@ var getGameData = function(gameResponse, callback){
         } else {
           var authenticate = false
         };
+        console.log(authenticate);
         callback(authenticate);
         done();
       });
     });
-  });
 };
 
 module.exports = getGameData;

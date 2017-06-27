@@ -40,7 +40,7 @@ var getGameData = function(minigame, callback){
         var game = gameResults[Math.floor(Math.random() * gameResults.length)]
         var decoyArray = [game.solution, decoyResults[Math.floor(Math.random() * decoyResults.length)].main, decoyResults[Math.floor(Math.random() * decoyResults.length)].main]
         shuffle(decoyArray);
-        var gameData = {gameKey: game.id, mainString: game.main, gameType: game.gametype, prompStrings: decoyArray}
+        var gameData = {gameKey: game.id, mainString: game.main, gameType: game.gametype, promptStrings: decoyArray}
 
         callback(gameData);
         done();

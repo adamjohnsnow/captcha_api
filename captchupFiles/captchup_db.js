@@ -1,4 +1,5 @@
-$.get("https://arcane-depths-35133.herokuapp.com", function( data ) {
+$.get("http://localhost:7070/db", function( data ) {
+  console.log(data)
   var string =
   '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
   '<img src="' +  data.mainString  + '" width="450"></img>'+
@@ -11,7 +12,7 @@ $.get("https://arcane-depths-35133.herokuapp.com", function( data ) {
 
 function selectImage(event){
   var answer = 'id=' + gameKey + '&img=' + event.target.currentSrc
-  $.post("https://arcane-depths-35133.herokuapp.com/answer?" + answer, function(response){
+  $.post("http://localhost:7070/db?" + answer, function(response){
     $('#response').val(response)
   })
 }

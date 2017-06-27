@@ -6,7 +6,6 @@ var getGameData = require('./assets/getGameData.js')
 var getGameAnswer = require('./assets/getGameAnswer.js')
 // var session = require('express-session');
 // var getAnswer = require('./assets/antworten')
-var ImgAssoc = require('./assets/imgAssoc')
 
 app.set('port', (process.env.PORT || 7070))
 
@@ -34,14 +33,20 @@ app.get('/test', function(req, res){
   res.render('api_test', {})
 })
 
+app.get('/test_db', function(req, res){
+  res.render('api_test_db', {})
+})
+
 app.get('/db', function(req, res){
   getGameData('imgAssoc', function(gameData){
+    console.log(gameData)
     res.send(gameData)
   });
 });
 
-app.post('/db' function(req, res){
+app.post('/db', function(req, res){
   getGameAnswer(req.query, function(authenticate){
+    console.log("index authenticate: " + authenticate);
     res.send(authenticate)
   });
 });
