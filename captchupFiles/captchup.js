@@ -28,11 +28,10 @@ var captchup = function() {
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: { my: "right", at: "right", of: '#captchupForm' }
+      position: { my: "right top", at: "right", of: '#captchupForm' }
     })
   })
 };
-
 
 $('#captchupForm').find(':submit').click(function(event){
   event.preventDefault()
