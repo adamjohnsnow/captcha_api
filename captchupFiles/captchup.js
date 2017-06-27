@@ -20,14 +20,6 @@ var captchup = function() {
   $(function() {
     $("#captchup").dialog({
       dialogClass: "no-close",
-  buttons: [
-    {
-      text: "OK",
-      click: function() {
-        $( this ).dialog( "close" );
-      }
-    }
-  ],
       modal: true,
       width: "auto",
       closeOnEscape: false,
