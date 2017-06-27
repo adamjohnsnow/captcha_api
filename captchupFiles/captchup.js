@@ -35,7 +35,8 @@ var captchup = function() {
   })
 };
 
-$('#captchupButton').click(function(event){
+
+$('#captchupForm').find(':submit').click(function(event){
   event.preventDefault()
   captchup();
 })
