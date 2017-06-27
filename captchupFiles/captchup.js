@@ -30,8 +30,7 @@ var captchup = function() {
       draggable, true,
       resizable: false,
       Height: 700,
-      Width: 700,
-      position: { my: "center", at: "center bottom", of: '#captchupForm' }
+      Width: 700
     })
   })
 };
