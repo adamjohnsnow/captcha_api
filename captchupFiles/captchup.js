@@ -18,7 +18,6 @@ var captchup = function() {
     return gameKey = data.gameKey
   });
 
-
   $(function() {
     $("#captchup").dialog({
       dialogClass: "no-close",
@@ -28,7 +27,7 @@ var captchup = function() {
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: { my: "center", at: "center", of: window }
+      position: { my: "center", at: "top", of: window }
     })
   })
 };
