@@ -19,7 +19,7 @@ function selectImage(event){
 var captchup = function() {
   $(function() {
     $("#captchup").dialog({
-      modal: false,
+      modal: true,
       width: "auto",
       closeOnEscape: false,
       resizable: false,
