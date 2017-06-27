@@ -41,14 +41,14 @@
 
   var captchup = function() {
     $(function() {
-      $("#dialog-message").dialog({
+      $("#captchup").dialog({
         modal: false,
         width: "auto",
         closeOnEscape: false,
         resizable: false,
         Height: 700,
         Width: 700,
-        position: { my: "right top", at: "right top", of: window }
+        position: { my: "right", at: "top", of: '#captchup' }
       });
     });
   };
