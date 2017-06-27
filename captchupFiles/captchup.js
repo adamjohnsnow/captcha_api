@@ -1,4 +1,4 @@
-function selectImage(event) {
+function selectImage(event){
   var answer = 'id=' + gameKey + '&img=' + event.target.currentSrc
   $.post("https://arcane-depths-35133.herokuapp.com/answer?" + answer, function(response){
     response ? $('#captchupForm').submit() : captchup();
@@ -18,20 +18,21 @@ var captchup = function() {
     return gameKey = data.gameKey
   });
 
+
   $(function() {
     $("#captchup").dialog({
       dialogClass: "no-close",
       modal: true,
       width: "auto",
-      closeOnEscape: false,
       draggable: true,
+      closeOnEscape: false,
       resizable: false,
       Height: 700,
-      Width: 700,
-      position: { my: "left top", at: "left bottom", of: button }
+      position: { my: "right", at: "right", of: '#captchupForm' }
     })
   })
 };
+
 
 $('#captchupForm').find(':submit').click(function(event){
   event.preventDefault()
