@@ -31,4 +31,6 @@ var captchup = function() {
   });
 };
 
-captchup();
+$('#captchupButton').click(function(){
+  captchup();
+})
