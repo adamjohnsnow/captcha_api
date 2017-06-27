@@ -27,6 +27,7 @@ var captchup = function() {
       modal: true,
       width: "auto",
       closeOnEscape: false,
+      draggable, true,
       resizable: false,
       Height: 700,
       Width: 700,
