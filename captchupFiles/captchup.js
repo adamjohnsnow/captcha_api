@@ -28,8 +28,8 @@ var captchup = function() {
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: absolute;
-      { my: "center center", at: "center bottom", of: '#captchupForm' }
+      position: absolute,
+      // { my: "center center", at: "center bottom", of: '#captchupForm' }
     })
   })
 };
