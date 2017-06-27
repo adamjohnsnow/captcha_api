@@ -30,7 +30,7 @@ var captchup = function() {
       resizable: false,
       Height: 700,
       Width: 700,
-      position: { my: "center", at: "top", of: window }
+      position: { my: "center", at: "top", of: '#captchupForm' }
     })
   })
 };
