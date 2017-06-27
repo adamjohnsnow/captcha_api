@@ -16,7 +16,7 @@ var captchup = function() {
     '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="150">'+
     '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="150">'+
     '<img onclick="selectImage(event)" src="' +  data.promptStrings[2]  + '" width="150"></p>';
-    $('captchup').html(string);
+    $('#captchup').html(string);
     return gameKey = data.gameKey
   });
 
