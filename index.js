@@ -2,6 +2,8 @@ var express = require('express');
 var bodyparser = require('body-parser')
 var app = express();
 var cors = require('cors')
+var getGameData = require('./assets/getGameData.js')
+var getGameAnswer = require('./assets/getGameAnswer.js')
 // var session = require('express-session');
 // var getAnswer = require('./assets/antworten')
 var ImgAssoc = require('./assets/imgAssoc')
@@ -31,3 +33,15 @@ app.post('/answer', function(req, res){
 app.get('/test', function(req, res){
   res.render('api_test', {})
 })
+
+app.get('/db', function(req, res){
+  getGameData('imgAssoc', function(gameData){
+    res.send(gameData)
+  });
+});
+
+app.post('/db' function(req, res){
+  getGameAnswer(req.query, function(authenticate){
+    res.send(authenticate)
+  });
+});
