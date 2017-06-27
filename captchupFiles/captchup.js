@@ -27,7 +27,7 @@ var captchup = function() {
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: { my: "top", at: "top", of: window }
+      position: { my: "top", at: "center top", of: window }
     })
   })
 };
