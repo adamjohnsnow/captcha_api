@@ -27,8 +27,8 @@ var captchup = function() {
       Height: 700,
       Width: 700,
       position: { my: "center", at: "top", of: window }
-    });
-  });
+    })
+  })
 };
 
 $('#captchupButton').click(function(){
