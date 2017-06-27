@@ -28,7 +28,7 @@ var captchup = function() {
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: { my: "right top", at: "right", of: '#captchupForm' }
+      position: { my: "right top", at: "center", of: '#captchupForm' }
     })
   })
 };
