@@ -3,7 +3,7 @@
 function selectImage(event){
   var answer = 'id=' + gameKey + '&img=' + event.target.currentSrc
   $.post("https://arcane-depths-35133.herokuapp.com/answer?" + answer, function(response){
-    response ? document.getElementById('captchupForm').submit() : captchup();
+    response ? $('#captchupForm').submit() : captchup();
   })
 }
 
