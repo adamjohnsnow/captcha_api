@@ -38,5 +38,6 @@ var captchup = function() {
 $('#captchupButton').click(function(event){
   event.preventDefault()
   captchup();
+  document.getElementById('captchupForm').submit();
 
 })
