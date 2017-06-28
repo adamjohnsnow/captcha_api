@@ -1,13 +1,13 @@
 function selectImage(event){
   var answer = 'id=' + gameKey + '&img=' + event.target.currentSrc
-  $.post("https://catchup-api.herokuapp.com/db?" + answer, function(response){
+  $.post("https://captchup-api.herokuapp.com/db?" + answer, function(response){
     response ? $('#captchupForm').submit() : captchup();
   })
 }
 
 var captchup = function() {
 
-  $.get("https://catchup-api.herokuapp.com/db", function( data ) {
+  $.get("https://captchup-api.herokuapp.com/db", function( data ) {
     var string;
     if ( data.gameType == 'imgAssoc') {
       string = '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
