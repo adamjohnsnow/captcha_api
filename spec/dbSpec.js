@@ -45,6 +45,14 @@ describe('database "getGameData" query tests', function(){
       done();
     });
   })
+
+  it('returns a dragDrop game with gameKey 17', function(done){
+    getGameData('dragDrop', function(gameData){
+      expect(gameData.gameKey).toEqual(17);
+      done();
+    });
+  })
+
 })
 
 
