@@ -42,14 +42,12 @@ app.get('/test_db', function(req, res){
 
 app.get('/db', function(req, res){
   getGameData('imgAssoc', function(gameData){
-    console.log(gameData)
     res.send(gameData)
   });
 });
 
 app.post('/db', function(req, res){
   getGameAnswer(req.query, function(authenticate){
-    console.log("index authenticate: " + authenticate);
     res.send(authenticate)
   });
 });
@@ -67,4 +65,3 @@ app.post('/area-click-answer', function(req, res){
   captcha = new AreaClick()
   res.send(captcha.getSolution(req.query))
 })
-

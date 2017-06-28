@@ -20,19 +20,12 @@ var getGameData = function(gameResponse, callback){
       gameAnswer = row
     });
 
-    // var decoyQueryString = "SELECT * FROM games WHERE gametype = 'decoy';";
-    // const decoyQuery = client.query(decoyQueryString);
-    // decoyQuery.on('row', (row) => {
-    //   decoyResults.push(row);
-    // });
-
     answerQuery.on('end', () => {
         if(gameAnswer.solution === gameResponse.img){
           var authenticate = true
         } else {
           var authenticate = false
         };
-        console.log(authenticate);
         callback(authenticate);
         done();
       });
