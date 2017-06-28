@@ -21,11 +21,18 @@ var getGameData = function(gameResponse, callback){
     });
 
     answerQuery.on('end', () => {
-        if(gameAnswer.solution === gameResponse.img){
-          var authenticate = true
-        } else {
-          var authenticate = false
-        };
+      if (gameAnswer.gametype === 'imgAssoc'){
+        var authenticate = (gameAnswer.solution === gameResponse.img)
+      }
+      if (gameAnswer.gametype === 'areaClick' ||
+          gameAnswer.gametype === 'dragDrop'){
+        coordsString = "gameAnswerCoords = " + gameAnswer.solution + ";";
+        eval(coordsString);
+        var authenticate = (Number(gameResponse.x) > gameAnswerCoords.xLowLimit &&
+        Number(gameResponse.x) < gameAnswerCoords.xHighLimit &&
+        Number(gameResponse.y) > gameAnswerCoords.yLowLimit &&
+        Number(gameResponse.y) < gameAnswerCoords.yHighLimit)
+      }
         callback(authenticate);
         done();
       });

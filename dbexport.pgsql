@@ -74,6 +74,7 @@ COPY games (id, main, solution, gametype) FROM stdin;
 14	http://i.imgur.com/xFNrjPt.jpg	n/a	decoy
 15	http://i.imgur.com/WjTvoeB.png	n/a	decoy
 16	http://i.imgur.com/4AehZVQ.jpg	{ xLowLimit: 138, xHighLimit: 181, yLowLimit: 57, yHighLimit: 125 }	areaClick
+17	http://i.imgur.com/4AehZVQ.jpg	{ xLowLimit: 138, xHighLimit: 181, yLowLimit: 57, yHighLimit: 125 }	dragDrop
 \.
 
 
