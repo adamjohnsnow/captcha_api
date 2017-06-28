@@ -8,12 +8,18 @@ function selectImage(event){
 var captchup = function() {
 
   $.get("https://arcane-depths-35133.herokuapp.com/db", function( data ) {
-    var string =
-    '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
-    '<img src="' +  data.mainString  + '" width="450"></img>'+
-    '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="150">'+
-    '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="150">'+
-    '<img onclick="selectImage(event)" src="' +  data.promptStrings[2]  + '" width="150"></p>';
+    var string;
+    if ( data.gameType == 'imgAssoc') {
+      string =   '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
+        '<img src="' +  data.mainString  + '" width="450"></img>'+
+        '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="150">'+
+        '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="150">'+
+        '<img onclick="selectImage(event)" src="' +  data.promptStrings[2]  + '" width="150"></p>';
+    } else {
+      string = '';
+
+    }
+
     $('#captchup').html(string);
     return gameKey = data.gameKey
   });
