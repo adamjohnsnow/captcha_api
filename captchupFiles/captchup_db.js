@@ -10,7 +10,7 @@ var captchup = function() {
   $.get("https://arcane-depths-35133.herokuapp.com/db", function( data ) {
     var string;
     if ( data.gameType == 'imgAssoc') {
-      string =   '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
+      string = '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
         '<img src="' +  data.mainString  + '" width="450"></img>'+
         '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="150">'+
         '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="150">'+
@@ -26,6 +26,15 @@ var captchup = function() {
 
   $(function() {
     $("#captchup").dialog({
+      dialogClass: "no-close",
+  buttons: [
+    {
+      text: "OK",
+      click: function() {
+        $( this ).dialog( "close" );
+      }
+    }
+  ],
       modal: true,
       width: "auto",
       draggable: true,
