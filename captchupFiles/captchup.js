@@ -1,13 +1,13 @@
 function selectImage(event){
   var answer = 'id=' + gameKey + '&img=' + event.target.currentSrc
-  $.post("https://arcane-depths-35133.herokuapp.com/answer?" + answer, function(response){
+  $.post("https://catchup-api.herokuapp.com/answer?" + answer, function(response){
     response ? $('#captchupForm').submit() : captchup();
   })
 }
 
 var captchup = function() {
 
-  $.get("https://arcane-depths-35133.herokuapp.com", function( data ) {
+  $.get("https://catchup-api.herokuapp.com", function( data ) {
     var string =
     '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
     '<img src="' +  data.mainString  + '" width="450"></img>'+
