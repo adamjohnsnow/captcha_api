@@ -17,7 +17,6 @@ var captchup = function() {
         '<img onclick="selectImage(event)" src="' +  data.promptStrings[2]  + '" width="150"></p>';
     } else {
       string = '';
-
     }
 
     $('#captchup').html(string);
