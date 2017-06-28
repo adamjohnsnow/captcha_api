@@ -6,4 +6,5 @@ psql
 CREATE DATABASE captcha_api_dev;
 \q
 psql -U <USERNAME> captcha_api_dev < dbexport.pgsql
+npm install
 ```

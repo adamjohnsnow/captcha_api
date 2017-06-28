@@ -15,14 +15,14 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -46,10 +46,7 @@ CREATE TABLE games (
 );
 
 
-ALTER TABLE games OWNER TO "Jaiye";
-
 --
--- Name: games_id_seq; Type: SEQUENCE; Schema: public; Owner: Jaiye
 --
 
 CREATE SEQUENCE games_id_seq
@@ -60,25 +57,9 @@ CREATE SEQUENCE games_id_seq
     CACHE 1;
 
 
-ALTER TABLE games_id_seq OWNER TO "Jaiye";
-
---
--- Name: games_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Jaiye
---
-
 ALTER SEQUENCE games_id_seq OWNED BY games.id;
 
-
---
--- Name: games id; Type: DEFAULT; Schema: public; Owner: Jaiye
---
-
 ALTER TABLE ONLY games ALTER COLUMN id SET DEFAULT nextval('games_id_seq'::regclass);
-
-
---
--- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: Jaiye
---
 
 COPY games (id, main, solution, gametype) FROM stdin;
 1	http://i.imgur.com/kvToefa.jpg	http://i.imgur.com/z7BxMwH.jpg	imgAssoc
@@ -114,4 +95,3 @@ SELECT pg_catalog.setval('games_id_seq', 20, true);
 --
 -- PostgreSQL database dump complete
 --
-
