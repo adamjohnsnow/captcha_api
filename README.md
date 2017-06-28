@@ -5,5 +5,5 @@ cd captcha_api
 psql
 CREATE DATABASE captcha_api_dev;
 \q
-psql -U adamsnow captcha_api_dev < dbexport.pgsql
+psql -U <USERNAME> captcha_api_dev < dbexport.pgsql
 ```
