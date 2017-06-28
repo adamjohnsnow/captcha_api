@@ -20,7 +20,6 @@ var captchup = function() {
 
   $(function() {
     $("#captchup").dialog({
-      dialogClass: "no-close",
       modal: true,
       width: "auto",
       draggable: true,
