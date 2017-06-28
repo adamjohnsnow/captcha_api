@@ -63,9 +63,6 @@ ALTER TABLE ONLY games ALTER COLUMN id SET DEFAULT nextval('games_id_seq'::regcl
 
 COPY games (id, main, solution, gametype) FROM stdin;
 1	http://i.imgur.com/kvToefa.jpg	http://i.imgur.com/z7BxMwH.jpg	imgAssoc
-2	http://i.imgur.com/SurS3Kl.jpg	http://i.imgur.com/oxEHv4A.jpg	imgAssoc
-3	http://i.imgur.com/6sb4dDg.jpg	http://i.imgur.com/mwEuphB.png	imgAssoc
-4	http://i.imgur.com/Bk4S00a.jpg	http://i.imgur.com/nFlLuwp.jpg	imgAssoc
 6	http://i.imgur.com/0XsFBQ4.png	n/a	decoy
 7	http://i.imgur.com/rw4Q6Pn.png	n/a	decoy
 8	http://i.imgur.com/zF0U9Pr.jpg	n/a	decoy
@@ -77,11 +74,7 @@ COPY games (id, main, solution, gametype) FROM stdin;
 14	http://i.imgur.com/xFNrjPt.jpg	n/a	decoy
 15	http://i.imgur.com/WjTvoeB.png	n/a	decoy
 16	http://i.imgur.com/4AehZVQ.jpg	{ xLowLimit: 138, xHighLimit: 181, yLowLimit: 57, yHighLimit: 125 }	areaClick
-17	http://i.imgur.com/QyU5v2N.jpg	{ xLowLimit: 163, xHighLimit: 226, yLowLimit: 58, yHighLimit: 124 }	areaClick
-18	http://i.imgur.com/Nz68cPK.jpg	{ xLowLimit: 304, xHighLimit: 341, yLowLimit: 207, yHighLimit: 245 }	areaClick
-19	http://i.imgur.com/HoBl8Mq.jpg	{ xLowLimit: 287, xHighLimit: 348, yLowLimit: 38, yHighLimit: 104 }	areaClick
-5	http://i.imgur.com/SOPeG4m.jpg	http://i.imgur.com/5WVbJTh.jpg	imgAssoc
-20	http://i.imgur.com/dD9HAgP.jpg	http://i.imgur.com/2DIVuaD.jpg	imgAssoc
+17	http://i.imgur.com/4AehZVQ.jpg	{ xLowLimit: 138, xHighLimit: 181, yLowLimit: 57, yHighLimit: 125 }	dragDrop
 \.
 
 
