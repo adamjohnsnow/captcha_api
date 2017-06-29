@@ -10,11 +10,9 @@ var captchup = function() {
   $.get("https://captchup-api.herokuapp.com/db", function( data ) {
     var string;
     if ( data.gameType == 'imgAssoc') {
-      string = '<p><img src="http://i.imgur.com/WGLuxAA.png"width="450"></img></p>'+
-        '<img src="' +  data.mainString  + '" width="450"></img>'+
-        '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="150">'+
-        '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="150">'+
-        '<img onclick="selectImage(event)" src="' +  data.promptStrings[2]  + '" width="150"></p>';
+      string = '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="200">'+
+        '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="200">'+
+        '<img onclick="selectImage(event)" src="' +  data.promptStrings[2]  + '" width="200"></p>';
     } else {
       string = '';
     }

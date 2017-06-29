@@ -6,9 +6,7 @@ var cors = require('cors')
 var getGameData = require('./assets/getGameData.js')
 var getGameAnswer = require('./assets/getGameAnswer.js')
 
-var ImgAssoc = require('./assets/imgAssoc')
 var AreaClick = require('./assets/areaClick')
-
 
 app.set('port', (process.env.PORT || 7070))
 
