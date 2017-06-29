@@ -26,12 +26,13 @@ var captchup = function() {
   $(function() {
     $("#captchup").dialog({
       dialogClass: "ui-dialog-titlebar-close",
-      buttons: [],
-      modal: true,
-      width: "auto",
-      Height: 700,
-      position: { my: "top", at: "center top", of: window },
       draggable: true
+      modal: true,
+      width: 'auto',
+      closeOnEscape: false,
+      resizable: false,
+      maxHeight: 800,
+      position: {my: "center", at: "top", of: window }
     })
   })
 };
