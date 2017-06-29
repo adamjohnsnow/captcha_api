@@ -32,7 +32,7 @@ var captchup = function() {
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: { 'top' }
+      position: { my: "center", at: "center", of: window }
     })
   })
 };
