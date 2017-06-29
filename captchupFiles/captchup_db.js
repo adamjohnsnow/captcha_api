@@ -10,7 +10,7 @@ var captchup = function() {
   $.get("https://captchup-api.herokuapp.com/db", function( data ) {
     var string;
     if ( data.gameType == 'imgAssoc') {
-      string = '<h4>Are you a robot?</h4>' +
+      string = '<h4 style="text-align: center;">Are you a robot?</h4>' +
         '<img src="' +  data.mainString  + '" width="600"></img>'+
         '<p><img onclick="selectImage(event)" src="' +  data.promptStrings[0]  + '" width="200">'+
         '<img onclick="selectImage(event)" src="' +  data.promptStrings[1]  + '" width="200">'+
