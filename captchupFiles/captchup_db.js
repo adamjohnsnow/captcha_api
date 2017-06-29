@@ -26,7 +26,7 @@ var captchup = function() {
   $(function() {
     $("#captchup").dialog({
       dialogClass: "ui-dialog-titlebar-close",
-      draggable: true
+      draggable: true,
       modal: true,
       width: 'auto',
       closeOnEscape: false,
