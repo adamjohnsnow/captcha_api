@@ -38,9 +38,22 @@ var getGameData = function(minigame, callback){
       decoyQuery.on('end', () => {
 
         var game = gameResults[Math.floor(Math.random() * gameResults.length)]
-        var decoyArray = [game.solution, decoyResults[Math.floor(Math.random() * decoyResults.length)].main, decoyResults[Math.floor(Math.random() * decoyResults.length)].main]
-        shuffle(decoyArray);
-        var gameData = {gameKey: game.id, mainString: game.main, gameType: game.gametype, promptStrings: decoyArray}
+        function getDecoyArray(){
+
+          var decoyArray = []
+
+          var decoy1 = decoyResults[Math.floor(Math.random() * decoyResults.length)].main
+          var decoy2 = decoyResults[Math.floor(Math.random() * decoyResults.length)].main
+
+          while(decoy1 === decoy2){ decoy2 = decoyResults[Math.floor(Math.random() * decoyResults.length)].main }
+
+          decoyArray = [game.solution, decoy1, decoy2]
+          shuffle(decoyArray);
+          console.log(decoyArray)
+          return decoyArray
+
+        }
+        var gameData = {gameKey: game.id, mainString: game.main, gameType: game.gametype, promptStrings: getDecoyArray()}
         callback(gameData);
         done();
       });
