@@ -29,11 +29,11 @@ var captchup = function() {
       buttons: [],
       modal: true,
       width: "auto",
-      draggable: true,
       closeOnEscape: false,
       resizable: false,
       Height: 700,
-      position: { my: "top", at: "center top", of: window }
+      position: { my: "top", at: "center top", of: window },
+      draggable: true
     })
   })
 };
